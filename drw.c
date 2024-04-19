@@ -70,6 +70,7 @@ drw_create(Display *dpy, int screen, Window root, unsigned int w, unsigned int h
 	drw->root = root;
 	drw->w = w;
 	drw->h = h;
+	drw->maxth = 0;
 	drw->drawable = XCreatePixmap(dpy, root, w, h, DefaultDepth(dpy, screen));
 	drw->gc = XCreateGC(dpy, root, 0, NULL);
 	XSetLineAttributes(dpy, drw->gc, 1, LineSolid, CapButt, JoinMiter);
@@ -166,6 +167,7 @@ drw_fontset_create(Drw* drw, const char *fonts[], size_t fontcount)
 		if ((cur = xfont_create(drw, fonts[fontcount - i], NULL))) {
 			cur->next = ret;
 			ret = cur;
+			drw->maxth = MAX(ret->h, drw->maxth);
 		}
 	}
 	return (drw->fonts = ret);
