@@ -1,5 +1,5 @@
 # add items to autostart here
-/home/trent/dwm/scripts/monitor.sh &
+/home/trent/dwm/configuration/monitor.sh &
 dunst &
 picom &
 flameshot &
