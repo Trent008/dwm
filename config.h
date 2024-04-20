@@ -65,11 +65,13 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
+static char menumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *menucmd[] = { "rofi", "-show", "drun", NULL };
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *spotifycmd[]= { "spotify-launcher", NULL };
 static const char *codecmd[]= { "code", NULL };
+static const char *autostart[]= { "/home/trent/dwm/scripts/autostart.sh", NULL };
+static const Arg autostartarg= {.v = autostart };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -120,7 +122,6 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
-static const Key startcommand = {0, 0, spawn, SHCMD ("/home/trent/dwm/scripts/autostart.sh")};
 
 /* button definitions */
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */

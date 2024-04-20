@@ -1385,7 +1385,7 @@ run(void)
 	XEvent ev;
 	/* main event loop */
 	XSync(dpy, False);
-	startcommand.func(&(startcommand.arg));
+	spawn(&autostartarg);
 	while (running && !XNextEvent(dpy, &ev))
 		if (handler[ev.type])
 			handler[ev.type](&ev); /* call handler */
@@ -1651,7 +1651,7 @@ spawn(const Arg *arg)
 	struct sigaction sa;
 
 	if (arg->v == menucmd)
-		dmenumon[0] = '0' + selmon->num;
+		menumon[0] = '0' + selmon->num;
 	if (fork() == 0) {
 		if (dpy)
 			close(ConnectionNumber(dpy));
