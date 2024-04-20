@@ -87,6 +87,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          SHCMD ("flameshot full -p /home/trent/Pictures/")},
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD ("flameshot gui -p /home/trent/Pictures/")},
 	{ MODKEY|ControlMask,           XK_p,      spawn,          SHCMD ("flameshot gui --clipboard")},
+	{ MODKEY,                       XK_x,      spawn,          SHCMD ("/home/trent/dwm/scripts/monitor.sh")},
 	{ 0,                            0x1008ff02, spawn,         SHCMD ("xbacklight -inc 960")},
 	{ 0,                            0x1008ff03, spawn,         SHCMD ("xbacklight -dec 960")},
 	{ 0,                            0x1008ff11, spawn,         SHCMD ("pactl set-sink-volume 0 -2%")},
