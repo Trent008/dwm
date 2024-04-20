@@ -8,15 +8,17 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Symbols Nerd Font Mono:size=10","Cantarell:size=16" };
 static const char dmenufont[]       = "Cantarell:size=16";
-static const char col_black[]       = "#000000";
+static const char col_black[]       = "#0d171a";
+static const char col_grey1[]       = "#7a989e";
 static const char col_cyan1[]       = "#101e21";
-static const char col_cyan2[]       = "#81e8fc";
-static const char col_cyan3[]       = "#d4f6fc";
+static const char col_cyan2[]       = "#244247";
+static const char col_cyan3[]       = "#81e8fc";
+static const char col_white[]       = "#b2d3d9"; //#d4f6fc";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_cyan3, col_black, col_black },
-	[SchemeSel]  = { col_cyan2, col_cyan1, col_cyan1 },
-	[SchemeBar]  = { col_cyan2, col_black, col_cyan1 },
+	[SchemeNorm] = { col_white, col_black, col_cyan1 },
+	[SchemeSel]  = { col_cyan3, col_cyan2, col_cyan2 },
+	[SchemeBar]  = { col_grey1, col_black, col_cyan1 },
 };
 
 /* tagging */
