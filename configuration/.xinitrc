@@ -1,4 +1,4 @@
-xrdb /home/trent/.Xresources
+xrdb .Xresources
 
 # display date and time
 while true; do
