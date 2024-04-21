@@ -1,4 +1,5 @@
 xrdb .Xresources
+# neccessary for commands to work for all users
 cd ~
 # display date and time
 while true; do
