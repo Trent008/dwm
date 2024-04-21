@@ -8,17 +8,27 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Symbols Nerd Font Mono:size=10","Cantarell:size=16" };
 static const char dmenufont[]       = "Cantarell:size=16";
-static const char col_black[]       = "#0d171a";
-static const char col_grey1[]       = "#7a989e";
-static const char col_cyan1[]       = "#101e21";
-static const char col_cyan2[]       = "#244247";
-static const char col_cyan3[]       = "#81e8fc";
-static const char col_white[]       = "#b2d3d9"; //#d4f6fc";
+static const char col_grey1[]       = "#222d32";
+static const char col_grey2[]       = "#35454d";
+static const char col_grey3[]       = "#587482";
+static const char col_cyan1[]       = "#14273d";
+static const char col_cyan2[]       = "#397ccc";
+static const char col_cyan3[]       = "#00bcd4";
+static const char col_white[]       = "#b9c2c7";
 static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_white, col_black, col_cyan1 },
-	[SchemeSel]  = { col_cyan3, col_cyan2, col_cyan2 },
-	[SchemeBar]  = { col_grey1, col_black, col_cyan1 },
+	/*                     fg         bg         border   */
+	[SchemeTagNorm]    = { col_white, col_grey1, col_grey1 },
+	[SchemeTagSel]     = { col_white, col_grey2, col_grey1 },
+	[SchemeTagUrgent]  = { col_cyan3, col_grey1, col_grey1 },
+
+	[SchemeLayoutNorm] = { col_cyan2, col_grey1, col_grey1 },
+	[SchemeLayoutSel]  = { col_cyan2, col_grey1, col_grey1 },
+
+	[SchemeClientNorm] = { col_grey3, col_grey1, col_grey1 },
+	[SchemeClientSel]  = { col_white, col_grey1, col_grey3 },
+
+	[SchemeStatusNorm] = { col_grey3, col_grey1, col_grey1 },
+	[SchemeStatusSel]  = { col_white, col_grey1, col_grey1 },
 };
 
 /* tagging */
