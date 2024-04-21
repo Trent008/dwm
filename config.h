@@ -40,6 +40,7 @@ static const Rule rules[] = {
 	{ "Thorium-browser", NULL,     NULL,      1 << 1,         0,           -1 },
 	{ "Spotify",         NULL,     NULL,      1 << 4,         0,            0 },
 	{ "code-oss",        NULL,     NULL,      1 << 3,         0,           -1 },
+	{ "Nemo",            NULL,     NULL,      1 << 2,         0,           -1 },
 };
 
 /* layout(s) */
@@ -88,8 +89,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD ("flameshot gui -p ~/Downloads/")},
 	{ MODKEY|ControlMask,           XK_p,      spawn,          SHCMD ("flameshot gui --clipboard")},
 	{ MODKEY,                       XK_x,      spawn,          SHCMD ("./dwm/configuration/monitor.sh")},
-	{ 0,                            0x1008ff02, spawn,         SHCMD ("xbacklight -inc 960")},
-	{ 0,                            0x1008ff03, spawn,         SHCMD ("xbacklight -dec 960")},
+	{ 0,                            0x1008ff02, spawn,         SHCMD ("brightnessctl set +960")},
+	{ 0,                            0x1008ff03, spawn,         SHCMD ("brightnessctl set -960")},
 	{ 0,                            0x1008ff11, spawn,         SHCMD ("pactl set-sink-volume 0 -2%")},
 	{ 0,                            0x1008ff12, spawn,         SHCMD ("pactl set-sink-mute 0 toggle")},
 	{ 0,                            0x1008ff13, spawn,         SHCMD ("pactl set-sink-volume 0 +2%")},
