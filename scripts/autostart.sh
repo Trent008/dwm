@@ -1,4 +1,5 @@
 # add items to autostart here
+cd ~
 /home/trent/dwm/configuration/monitor.sh &
 dunst &
 picom &
