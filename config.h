@@ -11,31 +11,27 @@ static const char dmenufont[]       = "Cantarell:size=16";
 static const char col_grey1[]       = "#222d32";
 static const char col_grey2[]       = "#35454d";
 static const char col_grey3[]       = "#587482";
-static const char col_cyan1[]       = "#14273d";
-static const char col_cyan2[]       = "#397ccc";
-static const char col_cyan3[]       = "#00bcd4";
-static const char col_cyan4[]       = "#50ddee";
-static const char col_blgn1[]       = "#0c2621";
-static const char col_blgn2[]       = "#ffd5bd";
-static const char col_white[]       = "#b9c2c7";
+static const char col_cyan[]       = "#81dbe6";
+static const char col_white1[]      = "#b9c2c7";
+static const char col_white2[]      = "#dae6ed";
 static const char *colors[][3]      = {
 	/*                      forground   background  border   */
 	[SchemeIconBoxNorm] = { col_grey1,  col_grey1,  col_grey1 },
 	[SchemeIconBoxSel]  = { col_grey2,  col_grey1,  col_grey1 },
-	[SchemeIconBoxUrg]  = { col_blgn1,  col_grey1,  col_grey1 },
+	[SchemeIconBoxUrg]  = { col_grey1,  col_grey1,  col_grey1 },
 
-	[SchemeIconNorm] = { col_white,  col_grey1, col_grey1 },
-	[SchemeIconSel]  = { col_cyan4,  col_grey1, col_grey1 },
-	[SchemeIconUrg]  = { col_blgn2,  col_grey1, col_grey1 },
+	[SchemeIconNorm] = { col_white1, col_grey1, col_grey1 },
+	[SchemeIconSel]  = { col_white2, col_grey1, col_grey1 },
+	[SchemeIconUrg]  = { col_cyan,  col_grey1, col_grey1 },
 
-	[SchemeLayoutNorm] = { col_cyan2, col_grey1, col_grey1 },
-	[SchemeLayoutSel]  = { col_cyan2, col_grey1, col_grey1 },
+	[SchemeLayoutNorm] = { col_cyan, col_grey1, col_grey1 },
+	[SchemeLayoutSel]  = { col_cyan, col_grey1, col_grey1 },
 
 	[SchemeClientNorm] = { col_grey3, col_grey1, col_grey1 },
-	[SchemeClientSel]  = { col_white, col_grey1, col_grey3 },
+	[SchemeClientSel]  = { col_white1, col_grey1, col_grey3 },
 
 	[SchemeStatusNorm] = { col_grey3, col_grey1, col_grey1 },
-	[SchemeStatusSel]  = { col_white, col_grey1, col_grey1 },
+	[SchemeStatusSel]  = { col_white1, col_grey1, col_grey1 },
 
 	[SchemeBarNorm]  = { col_grey1, col_grey1, col_grey1 },
 	[SchemeBarSel]  =  { col_grey1, col_grey1, col_grey1 },
