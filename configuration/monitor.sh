@@ -1,1 +1,0 @@
-xrandr --output eDP-1 --primary --pos 0x1200 --output HDMI-1 --auto --pos 1920x0
