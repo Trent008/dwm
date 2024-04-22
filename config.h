@@ -40,7 +40,7 @@ static const char *colors[][3]      = {
 /* tagging */
 static const char *tags[] = {
 	"", // terminal
-	"", // browser
+	"󰖟", // browser
 	"", // general
 	"", // code
 	"󰝚", // spotify
@@ -51,12 +51,12 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class             instance  title      tags mask       isfloating   monitor */
-	{ "kitty",           NULL,     NULL,           1,         0,           -1 },
-	{ "Thorium-browser", NULL,     NULL,      1 << 1,         0,           -1 },
-	{ "Nemo",            NULL,     NULL,      1 << 2,         0,           -1 },
-	{ "code-oss",        NULL,     NULL,      1 << 3,         0,           -1 },
-	{ "Spotify",         NULL,     NULL,      1 << 4,         0,            0 },
+	/* class          instance  title      tags mask       isfloating   monitor */
+	{ "kitty",        NULL,     NULL,           1,         0,           -1 },
+	{ "firefox",      NULL,     NULL,      1 << 1,         0,           -1 },
+	{ "Nemo",         NULL,     NULL,      1 << 2,         0,           -1 },
+	{ "code-oss",     NULL,     NULL,      1 << 3,         0,           -1 },
+	{ "Spotify",      NULL,     NULL,      1 << 4,         0,            0 },
 };
 
 /* layout(s) */
@@ -98,7 +98,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_t,      spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_s,      spawn,          {.v = spotifycmd } },
 	{ MODKEY,                       XK_c,      spawn,          {.v = codecmd } },
-	{ MODKEY,                       XK_b,      spawn,          SHCMD ("thorium-browser")},
+	{ MODKEY,                       XK_b,      spawn,          SHCMD ("firefox")},
 	{ MODKEY,                       XK_e,      spawn,          SHCMD ("nemo")},
 	{ MODKEY,                       XK_z,      spawn,          SHCMD ("blueberry")},
 	{ MODKEY,                       XK_p,      spawn,          SHCMD ("flameshot full -p ~/Downloads/")},
