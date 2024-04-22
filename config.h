@@ -16,25 +16,25 @@ static const char col_white1[]      = "#b9c2c7";
 static const char col_white2[]      = "#dae6ed";
 static const char *colors[][3]      = {
 	/*                      forground   background  border   */
-	[SchemeIconBoxNorm] = { col_grey1,  col_grey1,  col_grey1 },
-	[SchemeIconBoxSel]  = { col_grey2,  col_grey1,  col_grey1 },
-	[SchemeIconBoxUrg]  = { col_grey1,  col_grey1,  col_grey1 },
+	[SchemeIconBoxNorm] = { col_grey1,  NULL,  NULL },
+	[SchemeIconBoxSel]  = { col_grey2,  NULL,  NULL },
+	[SchemeIconBoxUrg]  = { col_grey1,  NULL,  NULL },
 
-	[SchemeIconNorm] = { col_white1, col_grey1, col_grey1 },
-	[SchemeIconSel]  = { col_white2, col_grey1, col_grey1 },
-	[SchemeIconUrg]  = { col_cyan,  col_grey1, col_grey1 },
+	[SchemeIconNorm] = { col_white1, NULL, NULL },
+	[SchemeIconSel]  = { col_white2, NULL, NULL },
+	[SchemeIconUrg]  = { col_cyan,  NULL, NULL },
 
-	[SchemeLayoutNorm] = { col_cyan, col_grey1, col_grey1 },
-	[SchemeLayoutSel]  = { col_cyan, col_grey1, col_grey1 },
+	[SchemeLayoutNorm] = { col_cyan, NULL, NULL },
+	[SchemeLayoutSel]  = { col_cyan, NULL, NULL },
 
-	[SchemeClientNorm] = { col_grey3, col_grey1, col_grey1 },
-	[SchemeClientSel]  = { col_white1, col_grey1, col_grey3 },
+	[SchemeClientNorm] = { col_grey3, NULL, col_grey1 },
+	[SchemeClientSel]  = { col_white1, NULL, col_grey3 },
 
-	[SchemeStatusNorm] = { col_grey3, col_grey1, col_grey1 },
-	[SchemeStatusSel]  = { col_white1, col_grey1, col_grey1 },
+	[SchemeStatusNorm] = { col_grey3, NULL, NULL },
+	[SchemeStatusSel]  = { col_white1, NULL, NULL },
 
-	[SchemeBarNorm]  = { col_grey1, col_grey1, col_grey1 },
-	[SchemeBarSel]  =  { col_grey1, col_grey1, col_grey1 },
+	[SchemeBarNorm]  = { col_grey1, NULL, NULL },
+	[SchemeBarSel]  =  { col_grey1, NULL, NULL },
 };
 
 /* tagging */
