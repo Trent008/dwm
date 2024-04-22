@@ -14,12 +14,19 @@ static const char col_grey3[]       = "#587482";
 static const char col_cyan1[]       = "#14273d";
 static const char col_cyan2[]       = "#397ccc";
 static const char col_cyan3[]       = "#00bcd4";
+static const char col_cyan4[]       = "#50ddee";
+static const char col_blgn1[]       = "#0c2621";
+static const char col_blgn2[]       = "#ffd5bd";
 static const char col_white[]       = "#b9c2c7";
 static const char *colors[][3]      = {
-	/*                     fg         bg         border   */
-	[SchemeTagNorm]    = { col_white, col_grey1, col_grey1 },
-	[SchemeTagSel]     = { col_white, col_grey2, col_grey1 },
-	[SchemeTagUrgent]  = { col_cyan3, col_grey1, col_grey1 },
+	/*                      forground   background  border   */
+	[SchemeIconBoxNorm] = { col_grey1,  col_grey1,  col_grey1 },
+	[SchemeIconBoxSel]  = { col_grey2,  col_grey1,  col_grey1 },
+	[SchemeIconBoxUrg]  = { col_blgn1,  col_grey1,  col_grey1 },
+
+	[SchemeIconNorm] = { col_white,  col_grey1, col_grey1 },
+	[SchemeIconSel]  = { col_cyan4,  col_grey1, col_grey1 },
+	[SchemeIconUrg]  = { col_blgn2,  col_grey1, col_grey1 },
 
 	[SchemeLayoutNorm] = { col_cyan2, col_grey1, col_grey1 },
 	[SchemeLayoutSel]  = { col_cyan2, col_grey1, col_grey1 },
@@ -29,6 +36,9 @@ static const char *colors[][3]      = {
 
 	[SchemeStatusNorm] = { col_grey3, col_grey1, col_grey1 },
 	[SchemeStatusSel]  = { col_white, col_grey1, col_grey1 },
+
+	[SchemeBarNorm]  = { col_grey1, col_grey1, col_grey1 },
+	[SchemeBarSel]  =  { col_grey1, col_grey1, col_grey1 },
 };
 
 /* tagging */
@@ -48,9 +58,9 @@ static const Rule rules[] = {
 	/* class             instance  title      tags mask       isfloating   monitor */
 	{ "kitty",           NULL,     NULL,           1,         0,           -1 },
 	{ "Thorium-browser", NULL,     NULL,      1 << 1,         0,           -1 },
-	{ "Spotify",         NULL,     NULL,      1 << 4,         0,            0 },
-	{ "code-oss",        NULL,     NULL,      1 << 3,         0,           -1 },
 	{ "Nemo",            NULL,     NULL,      1 << 2,         0,           -1 },
+	{ "code-oss",        NULL,     NULL,      1 << 3,         0,           -1 },
+	{ "Spotify",         NULL,     NULL,      1 << 4,         0,            0 },
 };
 
 /* layout(s) */

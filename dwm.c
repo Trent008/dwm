@@ -59,7 +59,14 @@
 
 /* enums */
 enum { CurNormal, CurResize, CurMove, CurLast }; /* cursor */
-enum { SchemeTagNorm, SchemeTagSel, SchemeTagUrgent, SchemeLayoutNorm, SchemeLayoutSel, SchemeClientNorm, SchemeClientSel, SchemeStatusNorm, SchemeStatusSel }; /* color schemes */
+enum {
+	SchemeIconBoxNorm, SchemeIconBoxSel, SchemeIconBoxUrg,
+	SchemeIconNorm, SchemeIconSel, SchemeIconUrg,
+	SchemeLayoutNorm, SchemeLayoutSel,
+	SchemeClientNorm, SchemeClientSel,
+	SchemeStatusNorm, SchemeStatusSel,
+	SchemeBarNorm, SchemeBarSel
+}; /* color schemes */
 enum { NetSupported, NetWMName, NetWMState, NetWMCheck,
        NetWMFullscreen, NetActiveWindow, NetWMWindowType,
        NetWMWindowTypeDialog, NetClientList, NetLast }; /* EWMH atoms */
@@ -706,6 +713,10 @@ drawbar(Monitor *m)
 
 	if (!m->showbar)
 		return;
+		
+	// draw bar
+	drw_setscheme(drw, scheme[m == selmon ? SchemeBarSel : SchemeBarNorm]);
+	drw_rect(drw, 0, 0, m->ww, bh, 1, 0);
 
 	/* draw status first so it can be overdrawn by tags later */
 	drw_setscheme(drw, scheme[m == selmon ? SchemeStatusSel : SchemeStatusNorm]);
@@ -720,7 +731,10 @@ drawbar(Monitor *m)
 	x = 0;
 	for (i = 0; i < LENGTH(tags); i++) {
 		w = TEXTW(tags[i]);
-		drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? SchemeTagSel : urg & 1 << i ? SchemeTagUrgent : SchemeTagNorm]);
+		drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? SchemeIconBoxSel : urg & 1 << i ? SchemeIconBoxUrg : SchemeIconBoxNorm]);
+		drw_rect(drw, x + 1, 2, w - 2, bh - 4, 1, 0);
+
+		drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? SchemeIconSel : urg & 1 << i ? SchemeIconUrg : SchemeIconNorm]);
 		drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], 0);
 		if (occ & 1 << i)
 			drw_rect(drw, x + boxs, boxs, boxw, boxw,
@@ -738,9 +752,6 @@ drawbar(Monitor *m)
 			drw_text(drw, x, 0, w, bh, lrpad / 2, m->sel->name, 0);
 			if (m->sel->isfloating)
 				drw_rect(drw, x + boxs, boxs, boxw, boxw, m->sel->isfixed, 0);
-		} else {
-			drw_setscheme(drw, scheme[SchemeClientNorm]);
-			drw_rect(drw, x, 0, w, bh, 1, 1);
 		}
 	}
 	drw_map(drw, m->barwin, 0, 0, m->ww, bh);
