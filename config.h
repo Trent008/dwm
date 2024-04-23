@@ -52,7 +52,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class          instance  title      tags mask       isfloating   monitor */
-	{ "kitty",        NULL,     NULL,           1,         0,           -1 },
+	{ "terminator",   NULL,     NULL,           1,         0,           -1 },
 	{ "firefox",      NULL,     NULL,      1 << 1,         0,           -1 },
 	{ "Nemo",         NULL,     NULL,      1 << 2,         0,           -1 },
 	{ "code-oss",     NULL,     NULL,      1 << 3,         0,           -1 },
@@ -86,7 +86,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_white1, "-sb", col_gray2, "-sf", col_cyan, NULL };
-static const char *termcmd[]  = { "kitty", NULL };
+static const char *termcmd[]  = { "terminator", NULL };
 static const char *spotifycmd[]= { "spotify-launcher", NULL };
 static const char *codecmd[]= { "code", NULL };
 static const char *autostart[]= { "./dwm/scripts/autostart.sh", NULL };
