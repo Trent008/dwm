@@ -8,17 +8,17 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Symbols Nerd Font Mono:size=10","Cantarell:size=16" };
 static const char dmenufont[]       = "Cantarell:size=14";
-static const char col_grey1[]       = "#222d32";
-static const char col_grey2[]       = "#35454d";
-static const char col_grey3[]       = "#587482";
-static const char col_cyan[]       = "#81dbe6";
+static const char col_gray1[]       = "#222d32";
+static const char col_gray2[]       = "#35454d";
+static const char col_gray3[]       = "#587482";
+static const char col_cyan[]        = "#81dbe6";
 static const char col_white1[]      = "#b9c2c7";
 static const char col_white2[]      = "#dae6ed";
 static const char *colors[][3]      = {
 	/*                      forground   background  border   */
-	[SchemeIconBoxNorm] = { col_grey1,  NULL,  NULL },
-	[SchemeIconBoxSel]  = { col_grey2,  NULL,  NULL },
-	[SchemeIconBoxUrg]  = { col_grey1,  NULL,  NULL },
+	[SchemeIconBoxNorm] = { col_gray1,  NULL,  NULL },
+	[SchemeIconBoxSel]  = { col_gray2,  NULL,  NULL },
+	[SchemeIconBoxUrg]  = { col_gray1,  NULL,  NULL },
 
 	[SchemeIconNorm] = { col_white1, NULL, NULL },
 	[SchemeIconSel]  = { col_white2, NULL, NULL },
@@ -27,14 +27,14 @@ static const char *colors[][3]      = {
 	[SchemeLayoutNorm] = { col_cyan, NULL, NULL },
 	[SchemeLayoutSel]  = { col_cyan, NULL, NULL },
 
-	[SchemeClientNorm] = { col_grey3, NULL, col_grey1 },
-	[SchemeClientSel]  = { col_white1, NULL, col_grey3 },
+	[SchemeClientNorm] = { col_gray3, NULL, col_gray1 },
+	[SchemeClientSel]  = { col_white1, NULL, col_gray3 },
 
-	[SchemeStatusNorm] = { col_grey3, NULL, NULL },
+	[SchemeStatusNorm] = { col_gray3, NULL, NULL },
 	[SchemeStatusSel]  = { col_white1, NULL, NULL },
 
-	[SchemeBarNorm]  = { col_grey1, NULL, NULL },
-	[SchemeBarSel]  =  { col_grey1, NULL, NULL },
+	[SchemeBarNorm]  = { col_gray1, NULL, NULL },
+	[SchemeBarSel]  =  { col_gray1, NULL, NULL },
 };
 
 /* tagging */
@@ -84,8 +84,8 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static char menumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_grey2, "-sf", col_cyan, NULL };
+static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_white1, "-sb", col_gray2, "-sf", col_cyan, NULL };
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *spotifycmd[]= { "spotify-launcher", NULL };
 static const char *codecmd[]= { "code", NULL };
