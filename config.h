@@ -67,7 +67,7 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "tiling",     tile },    /* first entry is default */
+	{ "tiling",   tile },    /* first entry is default */
 	{ "floating", NULL },    /* no layout function means floating behavior */
 	{ "monocle",  monocle },
 };
@@ -99,7 +99,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_s,      spawn,          {.v = spotifycmd } },
 	{ MODKEY,                       XK_c,      spawn,          {.v = codecmd } },
 	{ MODKEY,                       XK_b,      spawn,          SHCMD ("firefox")},
-	{ MODKEY,                       XK_e,      spawn,          SHCMD ("nemo")},
+	{ MODKEY,                       XK_e,      spawn,          SHCMD ("thunar")},
 	{ MODKEY,                       XK_p,      spawn,          SHCMD ("shotgun -s")},
 	{ MODKEY,                       XK_x,      spawn,          SHCMD ("./dwm/configuration/monitor.sh")},
 	{ 0,                            0x1008ff02, spawn,         SHCMD ("brightnessctl set +2%")},
