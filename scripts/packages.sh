@@ -1,7 +1,7 @@
 # installs my packages including yay
 sudo pacman -Syu
 sudo pacman -S libxinerama libx11 libxft xorg-server xorg-xinit xorg-xsetroot xorg-xrandr
-sudo pacman -S code kitty thunar feh picom spotify-launcher playerctl dunst
+sudo pacman -S code terminator thunar feh picom spotify-launcher playerctl dunst
 sudo pacman -S adapta-gtk-theme ttf-nerd-fonts-symbols-mono shotgun brightnessctl firefox
 cd ~
 git clone https://aur.archlinux.org/yay.git
