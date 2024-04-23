@@ -1659,7 +1659,7 @@ spawn(const Arg *arg)
 {
 	struct sigaction sa;
 
-	if (arg->v == menucmd)
+	if (arg->v == dmenucmd)
 		menumon[0] = '0' + selmon->num;
 	if (fork() == 0) {
 		if (dpy)

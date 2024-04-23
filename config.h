@@ -7,7 +7,7 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Symbols Nerd Font Mono:size=10","Cantarell:size=16" };
-static const char dmenufont[]       = "Cantarell:size=16";
+static const char dmenufont[]       = "Cantarell:size=14";
 static const char col_grey1[]       = "#222d32";
 static const char col_grey2[]       = "#35454d";
 static const char col_grey3[]       = "#587482";
@@ -85,7 +85,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char menumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *menucmd[] = { "rofi", "-show", "drun", NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_grey2, "-sf", col_cyan, NULL };
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *spotifycmd[]= { "spotify-launcher", NULL };
 static const char *codecmd[]= { "code", NULL };
@@ -94,16 +94,13 @@ static const Arg autostartarg= {.v = autostart };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_r,      spawn,          {.v = menucmd } },
+	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_t,      spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_s,      spawn,          {.v = spotifycmd } },
 	{ MODKEY,                       XK_c,      spawn,          {.v = codecmd } },
 	{ MODKEY,                       XK_b,      spawn,          SHCMD ("firefox")},
 	{ MODKEY,                       XK_e,      spawn,          SHCMD ("nemo")},
-	{ MODKEY,                       XK_z,      spawn,          SHCMD ("blueberry")},
-	{ MODKEY,                       XK_p,      spawn,          SHCMD ("flameshot full -p ~/Downloads/")},
-	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD ("flameshot gui -p ~/Downloads/")},
-	{ MODKEY|ControlMask,           XK_p,      spawn,          SHCMD ("flameshot gui --clipboard")},
+	{ MODKEY,                       XK_p,      spawn,          SHCMD ("shotgun -s")},
 	{ MODKEY,                       XK_x,      spawn,          SHCMD ("./dwm/configuration/monitor.sh")},
 	{ 0,                            0x1008ff02, spawn,         SHCMD ("brightnessctl set +2%")},
 	{ 0,                            0x1008ff03, spawn,         SHCMD ("brightnessctl set 2%-")},
