@@ -54,7 +54,7 @@ static const Rule rules[] = {
 	/* class          instance  title      tags mask       isfloating   monitor */
 	{ "terminator",   NULL,     NULL,           1,         0,           -1 },
 	{ "firefox",      NULL,     NULL,      1 << 1,         0,           -1 },
-	{ "Nemo",         NULL,     NULL,      1 << 2,         0,           -1 },
+	{ "Pcmanfm",         NULL,     NULL,      1 << 2,         0,           -1 },
 	{ "code-oss",     NULL,     NULL,      1 << 3,         0,           -1 },
 	{ "Spotify",      NULL,     NULL,      1 << 4,         0,            0 },
 };
@@ -94,13 +94,12 @@ static const Arg autostartarg= {.v = autostart };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_m,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_t,      spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_s,      spawn,          {.v = spotifycmd } },
 	{ MODKEY,                       XK_c,      spawn,          {.v = codecmd } },
 	{ MODKEY,                       XK_f,      spawn,          SHCMD ("firefox")},
-	{ MODKEY,                       XK_e,      spawn,          SHCMD ("thunar")},
-	{ MODKEY,                       XK_p,      spawn,          SHCMD ("shotgun -s")},
+	{ MODKEY,                       XK_e,      spawn,          SHCMD ("pcmanfm")},
 	{ MODKEY,                       XK_p,      spawn,          SHCMD ("shotgun -s")},
 	{ MODKEY,                       XK_x,      spawn,          SHCMD ("./dwm/configuration/monitor.sh")},
 	{ 0,                            0x1008ff02, spawn,         SHCMD ("brightnessctl set +2%")},
