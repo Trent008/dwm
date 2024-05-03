@@ -103,7 +103,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_e,      spawn,          SHCMD ("thunar")},
 	{ MODKEY,                       XK_p,      spawn,          SHCMD ("shotgun -s")},
 	{ MODKEY,                       XK_x,      spawn,          SHCMD ("./ultimate-system/monitor.sh")},
-	{ MODKEY,                       XK_h,      spawn,          SHCMD ("feh --bg-max ultimate-system/wallpapers/Sunset-Hawaii-informative.jpg")},
 	{ 0,                            0x1008ff02, spawn,         SHCMD ("brightnessctl set +2%")},
 	{ 0,                            0x1008ff03, spawn,         SHCMD ("brightnessctl set 2%-")},
 	{ 0,                            0x1008ff11, spawn,         SHCMD ("pactl set-sink-volume 0 -2%")},
