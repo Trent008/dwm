@@ -7,7 +7,6 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Symbols Nerd Font Mono:size=10","Cantarell:size=16" };
-static const char dmenufont[]       = "Cantarell:size=14";
 static const char col_gray1[]       = "#222d32";
 static const char col_gray2[]       = "#35454d";
 static const char col_gray3[]       = "#587482";
