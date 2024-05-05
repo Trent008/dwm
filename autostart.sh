@@ -2,4 +2,4 @@
 ./ultimate-system/monitor.sh &
 dunst &
 picom &
-feh --bg-max ultimate-system/wallpapers/Sunset-Hawaii.jpg
+feh --bg-max ultimate-system/wallpapers/
