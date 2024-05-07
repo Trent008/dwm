@@ -102,7 +102,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_e,      spawn,          SHCMD ("thunar")},
 	{ MODKEY,                       XK_p,      spawn,          SHCMD ("shotgun -s")},
 	{ MODKEY,                       XK_x,      spawn,          SHCMD ("./ultimate-system/monitor.sh")},
-	{ MODKEY,                       XK_v,      spawn,          SHCMD ("qemu-system-x86_64 -m 8G -cdrom vm-install.iso -cpu host -smp $(nproc) -boot order=d -drive file=vm.qcow2,format=qcow2 -accel kvm -chardev socket,id=chrtpm,path=/home/trent/vm-tpm/swtpm-sock -tpmdev emulator,id=tpm0,chardev=chrtpm -device tpm-tis,tpmdev=tpm0")},
+	{ MODKEY,                       XK_v,      spawn,          SHCMD ("qemu-system-x86_64 -m 16G -cdrom vm-install.iso -cpu host -smp $(nproc) -boot order=d -drive file=vm.qcow2,format=qcow2 -accel kvm -chardev socket,id=chrtpm,path=/home/trent/vm-tpm/swtpm-sock -tpmdev emulator,id=tpm0,chardev=chrtpm -device tpm-tis,tpmdev=tpm0")},
 	{ 0,                            0x1008ff02, spawn,         SHCMD ("brightnessctl set +2%")},
 	{ 0,                            0x1008ff03, spawn,         SHCMD ("brightnessctl set 2%-")},
 	{ 0,                            0x1008ff11, spawn,         SHCMD ("pactl set-sink-volume 0 -2%")},
