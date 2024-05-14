@@ -7,12 +7,12 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Symbols Nerd Font Mono:size=10","Cantarell:size=16" };
-static const char col_gray1[]       = "#222d32";
-static const char col_gray2[]       = "#35454d";
-static const char col_gray3[]       = "#587482";
+static const char col_gray1[]       = "#1c1c1c";
+static const char col_gray2[]       = "#252525";
+static const char col_gray3[]       = "#66676b";
 static const char col_cyan[]        = "#81dbe6";
-static const char col_white1[]      = "#b9c2c7";
-static const char col_white2[]      = "#dae6ed";
+static const char col_white1[]      = "#c4c4c4";
+static const char col_white2[]      = "#ececec";
 static const char *colors[][3]      = {
 	/*                      forground   background  border   */
 	[SchemeIconBoxNorm] = { col_gray1,  NULL,  NULL },
