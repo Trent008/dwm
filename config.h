@@ -100,6 +100,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_b,      spawn,          SHCMD ("firefox")},
 	{ MODKEY,                       XK_z,      spawn,          SHCMD ("blueberry")},
 	{ MODKEY,                       XK_e,      spawn,          SHCMD ("thunar")},
+	{ MODKEY,                       XK_v,      spawn,          SHCMD ("qemu-system-x86_64 -m 8G -cdrom vm-install.iso -cpu host -smp $(nproc) -boot order=d -drive file=vm.qcow2,format=qcow2 -accel kvm")},
 	{ MODKEY,                       XK_p,      spawn,          SHCMD ("shotgun -s")},
 	{ MODKEY,                       XK_x,      spawn,          SHCMD ("./ultimate-system/monitor.sh")},
 	{ 0,                            0x1008ff02, spawn,         SHCMD ("brightnessctl set +2%")},
