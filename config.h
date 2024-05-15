@@ -8,8 +8,8 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Symbols Nerd Font Mono:size=10","Cantarell:size=16" };
 static const char col_gray1[]       = "#1c1c1c";
-static const char col_gray2[]       = "#353535";
-static const char col_gray3[]       = "#66676b";
+static const char col_gray2[]       = "#303030";
+static const char col_gray3[]       = "#656565";
 static const char col_cyan[]        = "#81dbe6";
 static const char col_white1[]      = "#c4c4c4";
 static const char col_white2[]      = "#ececec";
