@@ -2,6 +2,6 @@
 ./ultimate-system/monitor.sh &
 dunst &
 picom &
-rclone mount --daemon Dordt-OneDrive: /home/trent/Dordt-OneDrive &
-rclone mount --daemon "Google Drive:" /home/trent/Google-Drive &
+rclone mount OneDrive-Dordt: OneDrive-Dordt &
+rclone mount Google-Drive: Google-Drive &
 feh --bg-max ultimate-system/wallpapers/
