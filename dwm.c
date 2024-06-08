@@ -716,7 +716,7 @@ drawbar(Monitor *m)
 		
 	// draw bar
 	drw_setscheme(drw, scheme[m == selmon ? SchemeBarSel : SchemeBarNorm]);
-	drw_rect(drw, 0, 0, m->ww, m->wh, 1, 0);
+	drw_rect(drw, 0, 0, m->ww, bh, 1, 0);
 
 	/* draw status first so it can be overdrawn by tags later */
 	drw_setscheme(drw, scheme[m == selmon ? SchemeStatusSel : SchemeStatusNorm]);
