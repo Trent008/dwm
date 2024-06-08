@@ -7,33 +7,55 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Symbols Nerd Font Mono:size=10","Cantarell:size=16" };
-static const char col_gray1[]       = "#222d32";
-static const char col_gray2[]       = "#35454d";
-static const char col_gray3[]       = "#587482";
-static const char col_cyan[]        = "#81dbe6";
-static const char col_white1[]      = "#b9c2c7";
-static const char col_white2[]      = "#dae6ed";
+static const char teal0[]       = "#030808";
+static const char teal1[]       = "#081616";
+static const char teal2[]       = "#0d2525";
+static const char teal3[]       = "#123333";
+static const char teal4[]       = "#174141";
+static const char teal5[]       = "#1c5050";
+static const char teal6[]       = "#215e5e";
+static const char teal7[]       = "#266d6d";
+static const char teal8[]       = "#2c7b7b";
+static const char teal9[]      = "#318a8a";
+static const char teal10[]      = "#369898";
+static const char teal11[]      = "#3ba7a7";
+static const char teal12[]      = "#40b5b5";
+static const char teal13[]      = "#4abfbf";
+static const char teal14[]      = "#59c4c4";
+static const char teal15[]      = "#67c9c9";
+static const char teal16[]      = "#76cece";
+static const char teal17[]      = "#84d4d4";
+static const char teal18[]      = "#93d9d9";
+static const char teal19[]      = "#a1dede";
+static const char teal20[]      = "#b0e3e3";
+static const char teal21[]      = "#bee8e8";
+static const char teal22[]      = "#cdeded";
+static const char teal23[]      = "#dbf2f2";
+static const char teal24[]      = "#eaf7f7";
+static const char teal25[]      = "#f8fdfd";
+static const char border_sel[]  = "#123323";
+static const char border_norm[] = "#122333";
 static const char *colors[][3]      = {
 	/*                      forground   background  border   */
-	[SchemeIconBoxNorm] = { col_gray1,  NULL,  NULL },
-	[SchemeIconBoxSel]  = { col_gray2,  NULL,  NULL },
-	[SchemeIconBoxUrg]  = { col_gray1,  NULL,  NULL },
+	[SchemeIconBoxNorm] = { teal4,  NULL,  NULL },
+	[SchemeIconBoxSel]  = { teal6,  NULL,  NULL },
+	[SchemeIconBoxUrg]  = { teal4,  NULL,  NULL },
 
-	[SchemeIconNorm] = { col_white1, NULL, NULL },
-	[SchemeIconSel]  = { col_white2, NULL, NULL },
-	[SchemeIconUrg]  = { col_cyan,  NULL, NULL },
+	[SchemeIconNorm] = { teal20, NULL, NULL },
+	[SchemeIconSel]  = { teal22, NULL, NULL },
+	[SchemeIconUrg]  = { teal18,  NULL, NULL },
 
-	[SchemeLayoutNorm] = { col_cyan, NULL, NULL },
-	[SchemeLayoutSel]  = { col_cyan, NULL, NULL },
+	[SchemeLayoutNorm] = { teal20, NULL, NULL },
+	[SchemeLayoutSel]  = { teal22, NULL, NULL },
 
-	[SchemeClientNorm] = { col_gray3, NULL, col_gray1 },
-	[SchemeClientSel]  = { col_white1, NULL, col_gray3 },
+	[SchemeClientNorm] = { teal20, NULL, border_norm },
+	[SchemeClientSel]  = { teal22, NULL, border_sel },
 
-	[SchemeStatusNorm] = { col_gray3, NULL, NULL },
-	[SchemeStatusSel]  = { col_white1, NULL, NULL },
+	[SchemeStatusNorm] = { teal20, NULL, NULL },
+	[SchemeStatusSel]  = { teal22, NULL, NULL },
 
-	[SchemeBarNorm]  = { col_gray1, NULL, NULL },
-	[SchemeBarSel]  =  { col_gray1, NULL, NULL },
+	[SchemeBarNorm]  = { teal2, NULL, NULL },
+	[SchemeBarSel]  =  { teal3, NULL, NULL },
 };
 
 /* tagging */
@@ -86,6 +108,8 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "rofi", "-show", "drun", NULL };
 static const char *termcmd[]  = { "terminator", NULL };
+static const char *spotifycmd[]= { "spotify-launcher", NULL };
+static const char *codecmd[]= { "code", NULL };
 static const char *autostart[]= { "./dwm/autostart.sh", NULL };
 static const Arg autostartarg= {.v = autostart };
 
@@ -93,13 +117,28 @@ static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_t,      spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_s,      spawn,          {.v = spotifycmd } },
+	{ MODKEY,                       XK_c,      spawn,          {.v = codecmd } },
+	{ MODKEY,                       XK_b,      spawn,          SHCMD ("firefox")},
+	{ MODKEY,                       XK_z,      spawn,          SHCMD ("blueberry")},
+	{ MODKEY,                       XK_e,      spawn,          SHCMD ("thunar")},
+	{ MODKEY,                       XK_p,      spawn,          SHCMD ("shotgun -s")},
+	{ MODKEY,                       XK_x,      spawn,          SHCMD ("./ultimate-system/monitor.sh")},
+	{ 0,                            0x1008ff02, spawn,         SHCMD ("brightnessctl set +2%")},
+	{ 0,                            0x1008ff03, spawn,         SHCMD ("brightnessctl set 2%-")},
+	{ 0,                            0x1008ff11, spawn,         SHCMD ("pactl set-sink-volume 0 -2%")},
+	{ 0,                            0x1008ff12, spawn,         SHCMD ("pactl set-sink-mute 0 toggle")},
+	{ 0,                            0x1008ff13, spawn,         SHCMD ("pactl set-sink-volume 0 +2%")},
+	{ 0,                            0x1008FF14, spawn,         SHCMD ("playerctl play-pause")},
+	{ 0,                            0x1008FF16, spawn,         SHCMD ("playerctl previous")},
+	{ 0,                            0x1008FF17, spawn,         SHCMD ("playerctl next")},
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_d,      incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_Left,   setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_Right,  setmfact,       {.f = +0.05} },
+	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
+	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
