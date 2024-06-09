@@ -123,7 +123,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_z,      spawn,          SHCMD ("blueberry")},
 	{ MODKEY,                       XK_e,      spawn,          SHCMD ("thunar")},
 	{ MODKEY,                       XK_p,      spawn,          SHCMD ("shotgun -s")},
-	{ MODKEY,                       XK_x,      spawn,          SHCMD ("./ultimate-system/monitor.sh")},
+	{ MODKEY,                       XK_x,      spawn,          SHCMD ("./dwm/monitor.sh")},
 	{ 0,                            0x1008ff02, spawn,         SHCMD ("brightnessctl set +2%")},
 	{ 0,                            0x1008ff03, spawn,         SHCMD ("brightnessctl set 2%-")},
 	{ 0,                            0x1008ff11, spawn,         SHCMD ("pactl set-sink-volume 0 -2%")},
